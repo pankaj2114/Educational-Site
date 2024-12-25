@@ -40,6 +40,10 @@ namespace Educational.Controllers
         {
             return View();
         }
+        public IActionResult Alumni()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

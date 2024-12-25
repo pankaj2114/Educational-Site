@@ -57,6 +57,18 @@
       "PackagePath": "staticwebassets\\Images\\9.jpg"
     },
     {
+      "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Alumni\\Ravi.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Alumni\\Ravi.jpeg"
+    },
+    {
+      "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Alumni\\pankaj.jpg",
+      "PackagePath": "staticwebassets\\Images\\Alumni\\pankaj.jpg"
+    },
+    {
+      "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Ourmission\\mission.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Ourmission\\mission.jpeg"
+    },
+    {
       "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Teachers\\10.jpg",
       "PackagePath": "staticwebassets\\Images\\Teachers\\10.jpg"
     },
@@ -79,6 +91,14 @@
     {
       "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Teachers\\sanskrit.jpeg",
       "PackagePath": "staticwebassets\\Images\\Teachers\\sanskrit.jpeg"
+    },
+    {
+      "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\Teachers\\social.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Teachers\\social.jpeg"
+    },
+    {
+      "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\director.jpg",
+      "PackagePath": "staticwebassets\\Images\\director.jpg"
     },
     {
       "Id": "D:\\Educational\\Educational\\wwwroot\\Images\\director.png",
