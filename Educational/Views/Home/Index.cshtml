@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+  
+}
+
+<!-- Custom Carousel Section -->
+<div id="customCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">  
+    <div class="carousel-inner">
+        @for (int i = -1; i < 10; i++)
+        {
+            <div class="carousel-item @((i == 1) ? "active" : "")">
+                <img class="d-block w-100 custom-carousel-img" src="@Url.Content($"~/Images/{i}.jpg")" alt="@i slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Scholar Coaching Center</h5>
+                    <p>Near bus stop Dhanepur Gonda UP.</p>
+                </div>
+            </div>
+        }
+    </div>
+    <a class="carousel-control-prev" href="#customCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#customCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+<!-- Custom Styles for Carousel -->
+<style>    
+    .carousel-inner {
+        overflow: hidden;
+    }
+
+    .custom-carousel-img {
+        object-fit: cover;
+        height: auto;
+        max-height:500px;
+       
+    }
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+        .carousel-caption h5 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1.25rem;
+        }
+
+    /* Optional: Add custom indicators style */
+    .carousel-indicators li {
+        background-color: #fff; /* White indicators */
+    }
+
+    .carousel-indicators .active {
+        background-color: #007bff; /* Blue active indicator */
+    }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

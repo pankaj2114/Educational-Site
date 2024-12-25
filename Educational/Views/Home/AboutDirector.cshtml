@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Director";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .rounded-circle {
+        border-radius: 0% !important;
+    }
+
+    .img-fluid {
+        min-height: 250px;
+        max-height: 300px;
+        border-radius: 0;
+    }
+</style>
+<section class="bg-light py-5 py-xl-8">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                <h2 class="fs-6 text-secondary mb-2 text-uppercase text-center">Hon'ble Director</h2>
+                <p class="display-5 mb-1 mb-md-1 fs-5 text-center">
+                    The Hon'ble Director is dedicated to fostering a culture of academic excellence and personal growth within the institute. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container overflow-hidden">
+        <div class="row gy-4 gy-md-0 gx-xxl-5">
+            <div class="col-12 ">
+                <div class="card border-0 border-bottom border-primary shadow-sm">
+                    <div class="card-body p-4 p-xxl-5">
+                        <figure>
+                            <div class="d-flex justify-content-center">
+                                <img class="img-fluid rounded rounded-circle mb-4 border border-5 col-md-4 col-lg-4 col-sm-6" loading="lazy" 
+                                src="@Url.Content("~/Images/director.jpg")" alt="Luke Reeves">
+                            </div>
+                            <figcaption>
+                                <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
+                                <blockquote class="bsb-blockquote-icon mb-4">
+                                   The pursuit of academic excellence is crucial in today’s highly competitive environment, 
+                                   where the foundation of success lies in acquiring a strong educational background. A quality 
+                                   education equips individuals with the knowledge and skills necessary to excel and contribute effectively to society.
+
+                                    At Scholar Coaching Center, we offer a wide array
+                                    of academic programs designed to provide comprehensive learning experiences in various subjects. Our aim is to 
+                                    nurture and enhance the potential of every student, helping them achieve their academic goals and secure a prosperous
+                                    future. We are committed to delivering the best possible educational environment, which includes experienced faculty, 
+                                    modern teaching methodologies, and well-structured courses tailored to the needs of our students. In addition to academic 
+                                    coaching, we place significant emphasis on building a student’s overall personality through extracurricular activities, 
+                                    regular assessments, and special guidance for competitive exams. We believe that the students joining Scholar Coaching Center will find the perfect platform to
+                                    hone their academic abilities and achieve success in their educational endeavors, ultimately setting the stage for a brighter future.
+                                </blockquote>
+                                <h4 class="mb-2">Shivakant Shukla</h4>
+                                <h5 class="fs-6 text-secondary mb-0">Assistant Teacher BSP</h5>
+                                <h5 class="fs-6 text-secondary mb-0">Director Scholor With Shivakant(YT)</h5>
+                                <h5 class="fs-6 text-secondary mb-0">Director SCC</h5>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

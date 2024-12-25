@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/contact.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="container d-flex justify-content-center">
+    @* <span class="big-circle"></span>
+        <img src="img/shape.png" class="square" alt="" />*@
+        <div class="form">
+            <div class="contact-info">
+                <h3 class="title">Let's get in touch</h3>
+                <p class="text">
+                Scholar Coaching Center offers expert coaching to help students achieve academic excellence with personalized guidance and experienced faculty.
+                </p>
+
+                <div class="info">
+                    <div class="information">
+                        <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+
+                        <p>Near Bus Stop Dhanepur Gonda, UP 271602</p>
+                    </div>
+                    <div class="information">
+                        <i class="fas fa-envelope"></i> &nbsp &nbsp
+                        <p>scholarwithsk@gmail.com</p>
+                    </div>
+                    <div class="information">
+                        <i class="fas fa-phone"></i>&nbsp&nbsp
+                        <p>+91 9838772230</p>
+                    </div>
+                </div>
+
+                <div class="social-media">
+                    <p>Connect with us :</p>
+                    <div class="social-icons">
+                    <a href="https://www.facebook.com/shivakantbjym" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                        </a>
+                    <a href="https://www.facebook.com/shivakantbjym" target="_blank">
+                        <i class="bi bi-twitter-x"></i>
+                        </a>
+                    <a href="https://www.facebook.com/shivakantbjym" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                        </a>
+                    <a href="https://www.facebook.com/shivakantbjym" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+
+            <form onsubmit="Sendmail(event)">
+                    <h3 class="title">Contact us</h3>
+                    <div class="input-container">
+                        <input type="text" name="name" id="name" class="input" required />
+                        <label for="Name">Name</label>
+                        <span>Name</span>
+                    </div>
+                    <div class="input-container">
+                    <input type="email" name="email" id="email" class="input" required />
+                        <label for="Email">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-container">
+                    <input type="tel" name="phone" id="phone" class="input" required />
+                        <label for="Phone">Phone</label>
+                        <span>Phone</span>
+                    </div>
+                    <div class="input-container textarea">
+                    <textarea name="message" class="input" id="message" required></textarea>
+                        <label for="message">Message</label>
+                        <span>Message</span>
+                    </div>
+                <input type="submit" value="Send" class="btn" onsubmit="Sendmail()" />
+                </form>
+
+            <!-- Success/Error Message -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div>@TempData["SuccessMessage"]</div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div>@TempData["ErrorMessage"]</div>
+            }
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+ </script>
+<!-- Include jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@*<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>*@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+</script>
+
+     <script type="text/javascript">
+    (function () {
+        emailjs.init("IMI4rZ476FcEexHR1"); //please encrypted user id for malicious attacks
+    })();
+    function Sendmail(e) {
+        e.preventDefault();
+        console.log('calling sendemail');
+        
+
+        const serviceID = "service_pdgfi6i";
+        const templateID = "template_kpmnll8";
+
+        // Using jQuery to get values
+        let subject =  $('#name').val();
+        let message = $('#message').val();
+        let email = $('#email').val();
+        let contact = $('#phone').val();
+
+        console.log(contact);
+        var templateParams = {
+            to_name: 'Scholar Coaching Center',
+            from_name: subject,
+            message: `Name: ${subject} <br> Message: ${message} <br> Phone No: ${contact} <br> Email ID: ${email}`
+        };
+
+        console.log(templateParams)
+        // Sending email using emailjs
+        emailjs.send(serviceID, templateID, templateParams)
+            .then(response => {
+                console.log('Email sent successfully!', response.status, response.text);
+                // Clear form fields after successful submission
+                $('#name').val('');
+                $('#email').val('');
+                $('#phone').val('');
+                $('#message').val('');
+                alert("Thanks for filling out the form, We will contact to you as soon as possible");
+            })
+            .catch(error => {
+                console.error('Error sending email:', error);
+            });
+    }
+
+ </script>
+
+
+
