@@ -1,0 +1,12 @@
+﻿services:
+  - type: web
+    name: educational-site
+    env: custom
+    buildCommand: |
+      curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 7.0
+      dotnet build
+    startCommand: dotnet Educational.dll  # Replace 'Educational.dll' with your actual DLL name
+    publishDirectory: ./publish
+    plan: free
+    branches:
+      - main
